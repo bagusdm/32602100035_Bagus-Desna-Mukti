@@ -1,0 +1,84 @@
+CRITICAL - 2023-07-23 00:52:01 --> Unclosed '{' on line 6
+in APPPATH\Controllers\Crud.php on line 39.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\Users\\USER ID\\OneDrive\\Desktop\\BAB5WEB\\app\\Controllers\\Crud.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Crud')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Crud')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Crud', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\USER ID\\OneDrive\\Desktop\\BAB5WEB\\public\\index.php')
+CRITICAL - 2023-07-23 01:23:04 --> Deletes are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Database\BaseBuilder.php on line 2767.
+ 1 SYSTEMPATH\Model.php(456): CodeIgniter\Database\BaseBuilder->delete()
+ 2 SYSTEMPATH\BaseModel.php(1065): CodeIgniter\Model->doDelete(null, false)
+ 3 APPPATH\Controllers\Crud.php(62): CodeIgniter\BaseModel->delete(null)
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Crud->hapus()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crud))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\USER ID\\OneDrive\\Desktop\\BAB5WEB\\public\\index.php')
+ERROR - 2023-07-23 01:28:30 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\app\Controllers\Crud.php(54): CodeIgniter\BaseModel->find(NULL)
+#7 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\CodeIgniter.php(934): App\Controllers\Crud->edit()
+#8 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crud))
+#9 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\USER I...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#5 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\app\Controllers\Crud.php(54): CodeIgniter\BaseModel->find(NULL)
+#6 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\CodeIgniter.php(934): App\Controllers\Crud->edit()
+#7 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crud))
+#8 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\USER ID\OneDrive\Desktop\BAB5WEB\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\USER I...')
+#11 {main}
+CRITICAL - 2023-07-23 01:28:30 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tb_mahasiswa`', [], false)
+ 3 SYSTEMPATH\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(false, null)
+ 5 APPPATH\Controllers\Crud.php(54): CodeIgniter\BaseModel->find(null)
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Crud->edit()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crud))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\USER ID\\OneDrive\\Desktop\\BAB5WEB\\public\\index.php')
+CRITICAL - 2023-07-23 01:47:50 --> Invalid file: "crud/tambah.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('crud/tambah.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('crud/tambah', [], true)
+ 3 APPPATH\Controllers\Crud.php(31): view('crud/tambah')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Crud->tambah()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crud))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\USER ID\\OneDrive\\Desktop\\BAB5WEB\\public\\index.php')
+CRITICAL - 2023-07-23 01:49:33 --> Invalid file: "/crud.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/crud.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/crud', [], true)
+ 3 APPPATH\Controllers\Crud.php(31): view('/crud')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Crud->tambah()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crud))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\USER ID\\OneDrive\\Desktop\\BAB5WEB\\public\\index.php')
